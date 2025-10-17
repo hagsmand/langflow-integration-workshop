@@ -114,7 +114,7 @@ https://www.ibm.com/products/watsonx-orchestrate and click on `Try it for free`
 Q1: Create this docling document: https://www.infineuminsight.com/media/2601/emea-fundamentals-of-engine-design-and-operation.pdf
 ```
 ```
-Q2: what are Power Cell components under Internal Combustion Engine? 
+Q2: what are Hybridisation of diesel future engine?
 A2: Slide 24
 ```
 ```
@@ -130,8 +130,8 @@ Q5: Where is sump?
 A5: Slide 17
 ```
 ```
-A6: What should I add on this slide to make it better.
-A7: <No reference should forward to Langflow>
+Q6: What should I add on this slide to make it better.
+A6: <No reference should forward to Langflow>
 ```
 
 
