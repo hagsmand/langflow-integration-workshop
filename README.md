@@ -122,16 +122,12 @@ Q3: How Generic Euro VI Diesel After-treatment Technology work?
 A3: Slide 13
 ```
 ```
-Q4: what are Main Components of an Internal Combustion Engine?
-A4: Slide 17
+Q4: Different injection configurations
+A4: Slide 22
 ```
 ```
-Q5: Where is sump?
-A5: Slide 17
-```
-```
-Q6: What should I add on the document to make it better.
-A6: <No reference should forward to Langflow>
+Q5: What should I add on the document to make it better.
+A5: <No reference should forward to Langflow>
 ```
 
 
