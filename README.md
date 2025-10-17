@@ -115,7 +115,7 @@ Q1: Create this docling document: https://www.infineuminsight.com/media/2601/eme
 ```
 ```
 Q2: what are Hybridisation of diesel future engine?
-A2: Slide 24
+A2: Slide 32
 ```
 ```
 Q3: How Generic Euro VI Diesel After-treatment Technology work?
@@ -130,7 +130,7 @@ Q5: Where is sump?
 A5: Slide 17
 ```
 ```
-Q6: What should I add on this slide to make it better.
+Q6: What should I add on the document to make it better.
 A6: <No reference should forward to Langflow>
 ```
 
