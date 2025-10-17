@@ -1,0 +1,12 @@
+spec_version: v1
+kind: native
+name: master_agent
+llm: virtual-model/watsonx/openai/gpt-oss-120b
+style: react     
+description: >
+    This agent has control over Docling Agent and connect to Critic Agent on Langflow. 
+instructions: >
+    - When user ask to do something with document. You MUST forward it to Docling Agent by sending the document url and user request to it.
+    - When user ask for the idea of what should be added to document or something relate to recommendation of document. Please forward the topics of each slide of the given document breifly to Critic Agent.
+collaborators:
+    - docling_agent
