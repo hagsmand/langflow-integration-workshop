@@ -1,12 +1,35 @@
 ## AI Alliance Workshop
 
 ### 1. Setup IBM Cloud free trial version
-- 
+1. Please access the following link:
+https://www.ibm.com/products/watsonx-orchestrate and click on `Try it for free`
+![alt text](assets/images/image.png)
+
+2. please fill in your email address can be personal email address and other information to register for watsonx Orchestrate
+![alt text](assets/images/image-1.png)
+
+
+3. After registering you should get a code to your email.
+![alt text](assets/images/image-2.png)
+
+4. Please add the code to register for free trial
+![alt text](assets/images/image-3.png)
+
+5. Once registered please deploy the trial in `us-east` region
+![alt text](assets/images/image-4.png)
+
+![alt text](assets/images/image-5.png)
+
+6. You will be directed to: https://dl.watson-orchestrate.ibm.com/. Afterwards please, login with the IBMid and password you signed up with.
+![alt text](assets/images/image-7.png)
+
+7. Your instance have been successfully provisioned once you landed here.
+![alt text](assets/images/image-8.png)
 
 ### 2. Setup watsonx.ai
 ![alt text](assets/step2/image1.png)
 
-1. Go to watsonx.ai click 'resource list' as in no.1 of above image. Search for 'x.ai' and click on studio.
+1. On your IBM Cloud page. Go to watsonx.ai click 'resource list' as in no.1 of above image. Search for 'x.ai' and click on studio.
 
 ![alt text](assets/step2/image2.png)
 
@@ -18,11 +41,11 @@
 
 ![alt text](assets/step2/image5.png)
 
-4. Go to "Manage" tab. Click "Services & Integrations". Click "Associate Service" then add only Machine Learning service you have.
+4. After created the project. Go to "Manage" tab. Click "Services & Integrations". Click "Associate Service" then add only Machine Learning service you have.
 
 ![alt text](assets/step2/image4.png)
 
-5. Go back to main page. On the Developer Access part. Click project you just create and save "Project ID" on your computer.
+5. Go back to main page. On the Developer Access part. Click project you just create and save "Project ID" on your note.
 
 
 ### 3. Setup forward port in VSCode
