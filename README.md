@@ -26,30 +26,37 @@ https://www.ibm.com/products/watsonx-orchestrate and click on `Try it for free`
 7. Your instance have been successfully provisioned once you landed here.
 ![alt text](assets/images/image-8.png)
 
-### 2. Setup watsonx.ai
-![alt text](assets/step2/image1.png)
+### 2. Add Gemini
+4. Our goal is to add `google/gemini-2.5-flash` to watsonx Orchestrate. Rename `env-template` to `.env` and add in your `GOOGLE_API_KEY`.Please visit https://aistudio.google.com and click generate an API key to get your API key.
 
-1. On your IBM Cloud page. Go to watsonx.ai click 'resource list' as in no.1 of above image. Search for 'x.ai' and click on studio.
+![alt text](assets/images/getapikey.png)
+![alt text](assets/images/success.png)
 
-![alt text](assets/step2/image2.png)
+NOTE:
+If you are unable to create api key, it means you haven't enabled Gemini API in Google cloud console and created a project. Hence please, enable gemini API and create a project.
 
-2. Click "Launch in" then click "IBM watsonx".
-
-![alt text](assets/step2/image3.png)
-
-3. On projects Click "+" sign and create your project.
-
-![alt text](assets/step2/image5.png)
-
-4. After created the project. Go to "Manage" tab. Click "Services & Integrations". Click "Associate Service" then add only Machine Learning service you have.
-
-![alt text](assets/step2/image4.png)
-
-5. Go back to main page. On the Developer Access part. Click project you just create and save "Project ID" on your note.
-
+![alt text](assets/images/unabletocreatekey.png)
+Enabling Gemini API
+![alt text](assets/images/enablegemini.png)
+Creating Project
+![alt text](assets/images/create-gcpproject.png)
 
 ### 3. Setup forward port in VSCode
-- Miew help capture screen noi, please. 
+1. Go to https://ngrok.com/download/windows?tab=download register and install. Only if you does not have Ngrok installed yet.
+(Required only non-installed Ngrok)
+2. Do not for get to run this command in your terminal. `ngrok config add-authtoken <token>`
+3. Run `ngrok config edit`
+4. Add this block of code to the YML file
+```
+tunnels:
+  web:
+    addr: 7680
+    proto: http
+  api:
+    addr: 8000
+    proto: http
+```
+5. Run `ngrok start --all`
 
 ### 4. Provision MCP server
 1. run this command `uvx --from docling-mcp docling-mcp-server --transport sse` in your terminal
@@ -79,16 +86,12 @@ https://www.ibm.com/products/watsonx-orchestrate and click on `Try it for free`
 
 2. Click on the resource and Click "Launch watsonx Orchestrate".
 
-![alt text](assets/step6/image3.png)
+![alt text](assets/step6/image_1.png)
+![alt text](assets/step6/image_2.png)
 
-3. Go to profile on top right and click "Settings". Click "Generate API Key". You will save this API key to use later.
+4. Click on Hamburger bar on top left. Click "Manage" and "Connections". Add the Connection with same setting as images above (ID and name should be `gg_creds`). Click on "Connect" and then click "Next". Click "Paste draft configuration" then "Add connection".
 
-![alt text](assets/step6/image4.png)
-![alt text](assets/step6/image5.png)
-
-4. Click on Hamburger bar on top left. Click "Manage" and "Connections". Add the Connection with same setting as images above (ID and name should be `watsonx_key`). Click on "Connect" and then click "Next". Click "Paste draft configuration" then "Add connection".
-
-5. On your terminal run `orchestrate models add --name "watsonx/openai/gpt-oss-120b" --app-id watsonx_key`
+5. On your terminal run `orchestrate models add --name "google/gemini-2.5-flash" --app-id gg_creds`
 
 6. Import agent with command `orchestrate agents import -f orchestrate/agents/docling_agent.yml` and `orchestrate agents import -f orchestrate/agents/master_agent.yml`
 
@@ -96,7 +99,7 @@ https://www.ibm.com/products/watsonx-orchestrate and click on `Try it for free`
 
 7. Go to "docling_agent" on watsonx Orchestrate. Click "Add tool". Click "Add from file or MCP server". Click "Import from MCP server". Click "Add MCP server".
 
-8. Put service name as "docling_mcp". Put the command `uvx mcp-proxy <forwarded_address_of_docling_mcp>/sse`. Leave other fields as it is. Click "Connect" and "Done". Toggle open for all tools you see on the screen, all pages.
+8. Put service name as "docling_mcp". Put the command `uvx mcp-proxy <forwarded_address_of_docling_mcp(port 8000)>/sse`. Leave other fields as it is. Click "Connect" and "Done". Toggle open for all tools you see on the screen, all pages.
 
 ![alt text](assets/step6/image7.png)
 
@@ -114,21 +117,20 @@ https://www.ibm.com/products/watsonx-orchestrate and click on `Try it for free`
 Q1: Create this docling document: https://www.infineuminsight.com/media/2601/emea-fundamentals-of-engine-design-and-operation.pdf
 ```
 ```
-Q2: what are Hybridisation of diesel future engine?
-A2: Slide 32
+Q2: what is the Hybridisation of diesel future engine?
+A2: Slide 32 (Mild Hybrid...)
 ```
 ```
-Q3: How Generic Euro VI Diesel After-treatment Technology work?
-A3: Slide 13
+Q3: I think it should be moderate hybrid. Please update the document.
+A3: Slide 22
 ```
 ```
-Q4: Different injection configurations
-A4: Slide 22
+Q4: What should I add on the document to make it better.
+A4: <No reference should forward to Langflow>
 ```
 ```
-Q5: What should I add on the document to make it better.
-A5: <No reference should forward to Langflow>
+Q5: with this doc key <replace>. Help me find answer what are Hybridisation of diesel future engine?
+A5: should be moderate hybrid
 ```
-
 
 
