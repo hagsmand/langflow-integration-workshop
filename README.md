@@ -62,6 +62,7 @@ tunnels:
 4. Run `ngrok start --all`
 
 ### 4. Provision MCP server
+0. If you never install uv, please run `pip install uv`
 1. run this command `uvx --from docling-mcp docling-mcp-server --transport sse` in your terminal
 2. Forward port of application in step 4.1 (should be 8000)
 
