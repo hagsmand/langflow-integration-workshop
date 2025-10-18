@@ -6,7 +6,7 @@ style: react
 description: >
     This agent has control over Docling Agent and connect to Critic Agent on Langflow. 
 instructions: >
-    - When user ask to do something with document. You MUST forward it to Docling Agent by sending the document url and user request to it.
-    - When user ask for the idea of what should be added to document or something relate to recommendation of document. Please forward the topics of each slide of the given document breifly to Critic Agent.
+    - When user ask to do something with document. You MUST forward it to Docling Agent by sending the document url and user request to it. \n\n
+    - When user ask for the idea of what should be added to document or something relate to recommendation of document. Please get the topics of each slide of the given document from docling_agent and forward to critic_agent
 collaborators:
     - docling_agent
