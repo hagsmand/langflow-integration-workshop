@@ -27,7 +27,7 @@ https://www.ibm.com/products/watsonx-orchestrate and click on `Try it for free`
 ![alt text](assets/images/image-8.png)
 
 ### 2. Add Gemini
-4. Our goal is to add `google/gemini-2.5-flash` to watsonx Orchestrate. Rename `env-template` to `.env` and add in your `GOOGLE_API_KEY`.Please visit https://aistudio.google.com and click generate an API key to get your API key.
+4. Our goal is to add `google/gemini-2.5-flash` to watsonx Orchestrate. Please visit https://aistudio.google.com and click generate an API key to get your API key.
 
 ![alt text](assets/images/getapikey.png)
 ![alt text](assets/images/success.png)
