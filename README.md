@@ -124,12 +124,12 @@ tunnels:
 Q1: Create this docling document: https://www.infineuminsight.com/media/2601/emea-fundamentals-of-engine-design-and-operation.pdf
 ```
 ```
-Q2: what is the Hybridisation of diesel future engine?
-A2: Slide 32 (Mild Hybrid...)
+Q2: Two categories of getting air into engine?
+A2: Slide 18
 ```
 ```
-Q3: I think it should be moderate hybrid. Please update the document.
-A3: Slide 22
+Q3: I think it should be Artificially aspirated rather than Naturally aspirated. Please update the document.
+A3: N/A
 ```
 ```
 Q4: What should I add on the document to make it better.
