@@ -53,7 +53,7 @@ agent:
 
 tunnels:
   web:
-    addr: 7680
+    addr: 7860
     proto: http
   api:
     addr: 8000
