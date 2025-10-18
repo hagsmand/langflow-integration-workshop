@@ -80,7 +80,7 @@ tunnels:
 
 ### 6. Setup Master Agent and Docling Agent on watsonx Orchestrate
 
-0. run `cd orchestrate` and `pip install uv` then `uv sync`
+0. run `cd orchestrate` then `uv sync`
 
 ![alt text](assets/step6/image.png)
 
