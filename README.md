@@ -44,10 +44,13 @@ Creating Project
 ### 3. Setup forward port
 1. Go to https://ngrok.com/download/windows?tab=download register and install. Only if you does not have Ngrok installed yet.
 (Required only non-installed Ngrok)
-2. Do not for get to run this command in your terminal. `ngrok config add-authtoken <token>`
-3. Run `ngrok config edit`
-4. Add this block of code to the YML file
+2. Run `ngrok config edit`
+3. Replace this block of code to the YML file
 ```
+version: 3
+agent:
+  authtoken: <your-authtoken>
+
 tunnels:
   web:
     addr: 7680
@@ -56,7 +59,7 @@ tunnels:
     addr: 8000
     proto: http
 ```
-5. Run `ngrok start --all`
+4. Run `ngrok start --all`
 
 ### 4. Provision MCP server
 1. run this command `uvx --from docling-mcp docling-mcp-server --transport sse` in your terminal
