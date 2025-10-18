@@ -84,7 +84,7 @@ tunnels:
 
 ![alt text](assets/step6/image.png)
 
-1.Go to watspx Orchestrate
+1.Go to watsonx Orchestrate
 
 ![alt text](assets/step6/image2.png)
 ![alt text](assets/step6/image_1.png)
