@@ -1,5 +1,7 @@
 ## AI Alliance Workshop
 
+**If you are Windows user. Any command please run as admin**
+
 ### 1. Setup IBM Cloud free trial version
 1. Please access the following link:
 https://www.ibm.com/products/watsonx-orchestrate and click on `Try it for free`
