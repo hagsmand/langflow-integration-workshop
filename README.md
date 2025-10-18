@@ -1,5 +1,7 @@
 ## AI Alliance Workshop
 
+**If you are Windows user. Any command please run as admin**
+
 ### 1. Setup IBM Cloud free trial version
 1. Please access the following link:
 https://www.ibm.com/products/watsonx-orchestrate and click on `Try it for free`
@@ -53,7 +55,7 @@ agent:
 
 tunnels:
   web:
-    addr: 7680
+    addr: 7860
     proto: http
   api:
     addr: 8000
@@ -81,49 +83,53 @@ tunnels:
 ### 6. Setup Master Agent and Docling Agent on watsonx Orchestrate
 
 0. run `cd orchestrate` then `uv sync`
+- For windows, run `.\.venv\Scripts\activate.bat`. For macOS, `source .venv/bin/activate`.
 
 ![alt text](assets/step6/image.png)
 
-1.Go to watsonx Orchestrate
+1.Go to watsonx Orchestrate connections
 
-![alt text](assets/step6/image2.png)
 ![alt text](assets/step6/image_1.png)
 ![alt text](assets/step6/image_2.png)
 
 2. Click on Hamburger bar on top left. Click "Manage" and "Connections". Add the Connection with same setting as images above (ID and name should be `gg_creds`). Click on "Connect" and then click "Next". Click "Paste draft configuration" then "Add connection".
 
-3. On your terminal run `orchestrate models add --name "google/gemini-2.5-flash" --app-id gg_creds`
+3. Setup WxO instance
+3.1 Go to profile on the top-right. Click "Settings" and select tab "API details". Save the "Service instance URL" with you. Also, Click "Generate your API key" and save it on your note.
+3.2 Back to VSCode where you ran cd to orchestrate. Run `orchestrate env add -n workshop-ai -u <Your Service instance URL>` and run `orchestrate env activate workshop-ai` then paste your saved API key.
 
-4. Import agent with command `orchestrate agents import -f orchestrate/agents/docling_agent.yml` and `orchestrate agents import -f orchestrate/agents/master_agent.yml`
+5. On your terminal run `orchestrate models add --name "google/gemini-2.5-flash" --app-id gg_creds`
+
+6. Import agent with command `orchestrate agents import -f agents/docling_agent.yml` and `orchestrate agents import -f agents/master_agent.yml`
 
 ![alt text](assets/step6/image6.png)
 
-5. Go to "docling_agent" on watsonx Orchestrate. Click "Add tool". Click "Add from file or MCP server". Click "Import from MCP server". Click "Add MCP server".
+6. Go to "docling_agent" on watsonx Orchestrate. Click "Add tool". Click "Add from file or MCP server". Click "Import from MCP server". Click "Add MCP server".
 
-6. Put service name as "docling_mcp". Put the command `uvx mcp-proxy <forwarded_address_of_docling_mcp(port 8000)>/sse`. Leave other fields as it is. Click "Connect" and "Done". Toggle open for all tools you see on the screen, all pages.
+7. Put service name as "docling_mcp". Put the command `uvx mcp-proxy <forwarded_address_of_docling_mcp(port 8000)>/sse`. Leave other fields as it is. Click "Connect" and "Done". Toggle open for all tools you see on the screen, all pages.
 
 ![alt text](assets/step6/image7.png)
 
-7. Go to master_agent. Click "Add agent". Click "Import from local instance". Click "docling_agent" then "Add to agent".
+8. Go to master_agent. Click "Add agent". Click "Import from local instance". Click "docling_agent" then "Add to agent".
 
 ![alt text](assets/step6/image8.png)
 ![alt text](assets/step6/image9.png)
 
-8. Go to Langflow project you imported. Click "Share" and select "MCP Server". Copy the url as shown on the 2nd image and save it on your note. 
+9. Go to Langflow project you imported. Click "Share" and select "MCP Server". Copy the url as shown on the 2nd image and save it on your note. 
 
-9. Go to Toolset of master_agent. Now, we will add critic_agent of Langflow via MCP. Again, you will click on "Add tool", "Add from file or MCP server", and "Import from MCP server". Click "Add MCP server". Put "Server name" as `langflow`. Replace URL you copy from step 10 from (http://localhost:7860) with (Your forwarded address of port 7860). Put "Install command" as `uvx mcp-proxy <Your fixed url>`. Click "Connect" and "Done". Toggle open for all tools you see on the screen, all pages. 
+10. Go to Toolset of master_agent. Now, we will add critic_agent of Langflow via MCP. Again, you will click on "Add tool", "Add from file or MCP server", and "Import from MCP server". Click "Add MCP server". Put "Server name" as `langflow`. Replace URL you copy from step 10 from (http://localhost:7860) with (Your forwarded address of port 7860). Put "Install command" as `uvx mcp-proxy <Your fixed url>`. Click "Connect" and "Done". Toggle open for all tools you see on the screen, all pages. 
 
 ### 7. Test master_agent
 ```
 Q1: Create this docling document: https://www.infineuminsight.com/media/2601/emea-fundamentals-of-engine-design-and-operation.pdf
 ```
 ```
-Q2: what is the Hybridisation of diesel future engine?
-A2: Slide 32 (Mild Hybrid...)
+Q2: Two categories of getting air into engine?
+A2: Slide 18
 ```
 ```
-Q3: I think it should be moderate hybrid. Please update the document.
-A3: Slide 22
+Q3: I think it should be Artificially aspirated rather than Naturally aspirated. Please update the document.
+A3: N/A
 ```
 ```
 Q4: What should I add on the document to make it better.
