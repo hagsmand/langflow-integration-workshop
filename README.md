@@ -41,7 +41,7 @@ Enabling Gemini API
 Creating Project
 ![alt text](assets/images/create-gcpproject.png)
 
-### 3. Setup forward port in VSCode
+### 3. Setup forward port
 1. Go to https://ngrok.com/download/windows?tab=download register and install. Only if you does not have Ngrok installed yet.
 (Required only non-installed Ngrok)
 2. Do not for get to run this command in your terminal. `ngrok config add-authtoken <token>`
