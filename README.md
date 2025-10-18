@@ -27,7 +27,7 @@ https://www.ibm.com/products/watsonx-orchestrate and click on `Try it for free`
 ![alt text](assets/images/image-8.png)
 
 ### 2. Add Gemini
-4. Our goal is to add `google/gemini-2.5-flash` to watsonx Orchestrate. Rename `env-template` to `.env` and add in your `GOOGLE_API_KEY`.Please visit https://aistudio.google.com and click generate an API key to get your API key.
+4. Our goal is to add `google/gemini-2.5-flash` to watsonx Orchestrate. Please visit https://aistudio.google.com and click generate an API key to get your API key.
 
 ![alt text](assets/images/getapikey.png)
 ![alt text](assets/images/success.png)
@@ -41,13 +41,16 @@ Enabling Gemini API
 Creating Project
 ![alt text](assets/images/create-gcpproject.png)
 
-### 3. Setup forward port in VSCode
+### 3. Setup forward port
 1. Go to https://ngrok.com/download/windows?tab=download register and install. Only if you does not have Ngrok installed yet.
 (Required only non-installed Ngrok)
-2. Do not for get to run this command in your terminal. `ngrok config add-authtoken <token>`
-3. Run `ngrok config edit`
-4. Add this block of code to the YML file
+2. Run `ngrok config edit`
+3. Replace this block of code to the YML file
 ```
+version: 3
+agent:
+  authtoken: <your-authtoken>
+
 tunnels:
   web:
     addr: 7680
@@ -56,9 +59,10 @@ tunnels:
     addr: 8000
     proto: http
 ```
-5. Run `ngrok start --all`
+4. Run `ngrok start --all`
 
 ### 4. Provision MCP server
+0. If you never install uv, please run `pip install uv`
 1. run this command `uvx --from docling-mcp docling-mcp-server --transport sse` in your terminal
 2. Forward port of application in step 4.1 (should be 8000)
 
@@ -76,41 +80,38 @@ tunnels:
 
 ### 6. Setup Master Agent and Docling Agent on watsonx Orchestrate
 
-0. run `cd orchestrate` and `pip install uv` then `uv sync`
+0. run `cd orchestrate` then `uv sync`
 
 ![alt text](assets/step6/image.png)
 
-1. Launch watsonx Orchestrate. Go to resource list of IBM Cloud and search for "orchestrate". 
+1.Go to watsonx Orchestrate
 
 ![alt text](assets/step6/image2.png)
-
-2. Click on the resource and Click "Launch watsonx Orchestrate".
-
 ![alt text](assets/step6/image_1.png)
 ![alt text](assets/step6/image_2.png)
 
-4. Click on Hamburger bar on top left. Click "Manage" and "Connections". Add the Connection with same setting as images above (ID and name should be `gg_creds`). Click on "Connect" and then click "Next". Click "Paste draft configuration" then "Add connection".
+2. Click on Hamburger bar on top left. Click "Manage" and "Connections". Add the Connection with same setting as images above (ID and name should be `gg_creds`). Click on "Connect" and then click "Next". Click "Paste draft configuration" then "Add connection".
 
-5. On your terminal run `orchestrate models add --name "google/gemini-2.5-flash" --app-id gg_creds`
+3. On your terminal run `orchestrate models add --name "google/gemini-2.5-flash" --app-id gg_creds`
 
-6. Import agent with command `orchestrate agents import -f orchestrate/agents/docling_agent.yml` and `orchestrate agents import -f orchestrate/agents/master_agent.yml`
+4. Import agent with command `orchestrate agents import -f orchestrate/agents/docling_agent.yml` and `orchestrate agents import -f orchestrate/agents/master_agent.yml`
 
 ![alt text](assets/step6/image6.png)
 
-7. Go to "docling_agent" on watsonx Orchestrate. Click "Add tool". Click "Add from file or MCP server". Click "Import from MCP server". Click "Add MCP server".
+5. Go to "docling_agent" on watsonx Orchestrate. Click "Add tool". Click "Add from file or MCP server". Click "Import from MCP server". Click "Add MCP server".
 
-8. Put service name as "docling_mcp". Put the command `uvx mcp-proxy <forwarded_address_of_docling_mcp(port 8000)>/sse`. Leave other fields as it is. Click "Connect" and "Done". Toggle open for all tools you see on the screen, all pages.
+6. Put service name as "docling_mcp". Put the command `uvx mcp-proxy <forwarded_address_of_docling_mcp(port 8000)>/sse`. Leave other fields as it is. Click "Connect" and "Done". Toggle open for all tools you see on the screen, all pages.
 
 ![alt text](assets/step6/image7.png)
 
-9. Go to master_agent. Click "Add agent". Click "Import from local instance". Click "docling_agent" then "Add to agent".
+7. Go to master_agent. Click "Add agent". Click "Import from local instance". Click "docling_agent" then "Add to agent".
 
 ![alt text](assets/step6/image8.png)
 ![alt text](assets/step6/image9.png)
 
-10. Go to Langflow project you imported. Click "Share" and select "MCP Server". Copy the url as shown on the 2nd image and save it on your note. 
+8. Go to Langflow project you imported. Click "Share" and select "MCP Server". Copy the url as shown on the 2nd image and save it on your note. 
 
-11. Go to Toolset of master_agent. Now, we will add critic_agent of Langflow via MCP. Again, you will click on "Add tool", "Add from file or MCP server", and "Import from MCP server". Click "Add MCP server". Put "Server name" as `langflow`. Replace URL you copy from step 10 from (http://localhost:7860) with (Your forwarded address of port 7860). Put "Install command" as `uvx mcp-proxy <Your fixed url>`. Click "Connect" and "Done". Toggle open for all tools you see on the screen, all pages. 
+9. Go to Toolset of master_agent. Now, we will add critic_agent of Langflow via MCP. Again, you will click on "Add tool", "Add from file or MCP server", and "Import from MCP server". Click "Add MCP server". Put "Server name" as `langflow`. Replace URL you copy from step 10 from (http://localhost:7860) with (Your forwarded address of port 7860). Put "Install command" as `uvx mcp-proxy <Your fixed url>`. Click "Connect" and "Done". Toggle open for all tools you see on the screen, all pages. 
 
 ### 7. Test master_agent
 ```
