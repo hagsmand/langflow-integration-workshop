@@ -98,7 +98,7 @@ tunnels:
 
 5. On your terminal run `orchestrate models add --name "google/gemini-2.5-flash" --app-id gg_creds`
 
-6. Import agent with command `orchestrate agents import -f orchestrate/agents/docling_agent.yml` and `orchestrate agents import -f orchestrate/agents/master_agent.yml`
+6. Import agent with command `orchestrate agents import -f agents/docling_agent.yml` and `orchestrate agents import -f agents/master_agent.yml`
 
 ![alt text](assets/step6/image6.png)
 
