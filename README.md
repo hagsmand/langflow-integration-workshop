@@ -46,29 +46,9 @@ Creating Project
 ### 3. Setup forward port
 1. Go to https://ngrok.com/download/windows?tab=download register and install. Only if you does not have Ngrok installed yet.
 (Required only non-installed Ngrok)
-2. Run `ngrok config edit`
-3. Replace this block of code to the YML file
-```
-version: 3
-agent:
-  authtoken: <your-authtoken>
+2. Run `ngrok http 7860`
 
-tunnels:
-  web:
-    addr: 7860
-    proto: http
-  api:
-    addr: 8000
-    proto: http
-```
-4. Run `ngrok start --all`
-
-### 4. Provision MCP server
-0. If you never install uv, please run `pip install uv`
-1. run this command `uvx --from docling-mcp docling-mcp-server --transport sse` in your terminal
-2. Forward port of application in step 4.1 (should be 8000)
-
-### 5. Setup Critic Agent on Langflow
+### 4. Setup Critic Agent on Langflow
 
 ![alt text](assets/step5/image.png)
 
@@ -80,7 +60,7 @@ tunnels:
 3. In the flow chage the model to the provider you have API key, and input your API key (can replicate from previous workshop where you can use ChatGPT).
 4. Forward port of this application (should be 7860)
 
-### 6. Setup Master Agent and Docling Agent on watsonx Orchestrate
+### 5. Setup Master Agent and Docling Agent on watsonx Orchestrate
 
 0. run `cd orchestrate` then `uv sync`
 - For windows, run `.\.venv\Scripts\activate.bat`. For macOS, `source .venv/bin/activate`.
@@ -106,7 +86,7 @@ tunnels:
 
 6. Go to "docling_agent" on watsonx Orchestrate. Click "Add tool". Click "Add from file or MCP server". Click "Import from MCP server". Click "Add MCP server".
 
-7. Put service name as "docling_mcp". Put the command `uvx mcp-proxy <forwarded_address_of_docling_mcp(port 8000)>/sse`. Leave other fields as it is. Click "Connect" and "Done". Toggle open for all tools you see on the screen, all pages.
+7. Put service name as "docling_mcp". Put the command `uvx mcp-proxy https://docling-server-large.21oo25foed0i.us-east.codeengine.appdomain.cloud/sse`. Leave other fields as it is. Click "Connect" and "Done". Toggle open for all tools you see on the screen, all pages.
 
 ![alt text](assets/step6/image7.png)
 
@@ -119,9 +99,10 @@ tunnels:
 
 10. Go to Toolset of master_agent. Now, we will add critic_agent of Langflow via MCP. Again, you will click on "Add tool", "Add from file or MCP server", and "Import from MCP server". Click "Add MCP server". Put "Server name" as `langflow`. Replace URL you copy from step 10 from (http://localhost:7860) with (Your forwarded address of port 7860). Put "Install command" as `uvx mcp-proxy <Your fixed url>`. Click "Connect" and "Done". Toggle open for all tools you see on the screen, all pages. 
 
-### 7. Test master_agent
+### 6. Test master_agent
 ```
-Q1: Create this docling document: https://www.infineuminsight.com/media/2601/emea-fundamentals-of-engine-design-and-operation.pdf
+Q1: Help me create docling document of this url https://www.infineuminsight.com/media/2601/emea-fundamentals-of-engine-design-and-operation.pdf
+A2: <No reference>
 ```
 ```
 Q2: Two categories of getting air into engine?
@@ -129,15 +110,10 @@ A2: Slide 18
 ```
 ```
 Q3: I think it should be Artificially aspirated rather than Naturally aspirated. Please update the document.
-A3: N/A
+A3: <If somebody changed it, you may ask the agent to change any content you like>
 ```
 ```
 Q4: How should I improve this document?
 A4: <No reference should forward to Langflow>
 ```
-```
-Q5: with this doc key <replace>. Help me find answer what are Hybridisation of diesel future engine?
-A5: should be moderate hybrid
-```
-
 

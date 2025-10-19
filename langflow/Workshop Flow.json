@@ -3,10 +3,11 @@
     "edges": [
       {
         "animated": false,
+        "className": "",
         "data": {
           "sourceHandle": {
             "dataType": "ChatInput",
-            "id": "ChatInput-VZPGJ",
+            "id": "ChatInput-3B62j",
             "name": "message",
             "output_types": [
               "Message"
@@ -14,26 +15,27 @@
           },
           "targetHandle": {
             "fieldName": "input_value",
-            "id": "Agent-HN7xN",
+            "id": "Agent-NkJqq",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "xy-edge__ChatInput-VZPGJ{œdataTypeœ:œChatInputœ,œidœ:œChatInput-VZPGJœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-Agent-HN7xN{œfieldNameœ:œinput_valueœ,œidœ:œAgent-HN7xNœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-ChatInput-3B62j{œdataTypeœ:œChatInputœ,œidœ:œChatInput-3B62jœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-Agent-NkJqq{œfieldNameœ:œinput_valueœ,œidœ:œAgent-NkJqqœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "ChatInput-VZPGJ",
-        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-VZPGJœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "Agent-HN7xN",
-        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œAgent-HN7xNœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "ChatInput-3B62j",
+        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-3B62jœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "Agent-NkJqq",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œAgent-NkJqqœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
+        "className": "",
         "data": {
           "sourceHandle": {
             "dataType": "Agent",
-            "id": "Agent-HN7xN",
+            "id": "Agent-NkJqq",
             "name": "response",
             "output_types": [
               "Message"
@@ -41,7 +43,7 @@
           },
           "targetHandle": {
             "fieldName": "input_value",
-            "id": "ChatOutput-J3KwL",
+            "id": "ChatOutput-Dteip",
             "inputTypes": [
               "Data",
               "DataFrame",
@@ -50,18 +52,18 @@
             "type": "other"
           }
         },
-        "id": "xy-edge__Agent-HN7xN{œdataTypeœ:œAgentœ,œidœ:œAgent-HN7xNœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}-ChatOutput-J3KwL{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-J3KwLœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}",
+        "id": "reactflow__edge-Agent-NkJqq{œdataTypeœ:œAgentœ,œidœ:œAgent-NkJqqœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}-ChatOutput-Dteip{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-Dteipœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "Agent-HN7xN",
-        "sourceHandle": "{œdataTypeœ:œAgentœ,œidœ:œAgent-HN7xNœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "ChatOutput-J3KwL",
-        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-J3KwLœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}"
+        "source": "Agent-NkJqq",
+        "sourceHandle": "{œdataTypeœ:œAgentœ,œidœ:œAgent-NkJqqœ,œnameœ:œresponseœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "ChatOutput-Dteip",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-Dteipœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}"
       }
     ],
     "nodes": [
       {
         "data": {
-          "id": "Agent-HN7xN",
+          "id": "Agent-NkJqq",
           "node": {
             "base_classes": [
               "Message"
@@ -98,8 +100,9 @@
             ],
             "frozen": false,
             "icon": "bot",
-            "last_updated": "2025-10-16T06:11:23.983Z",
+            "last_updated": "2025-10-19T13:25:00.451Z",
             "legacy": false,
+            "lf_version": "1.6.4",
             "metadata": {},
             "minimized": false,
             "output_types": [],
@@ -233,7 +236,7 @@
                 "show": true,
                 "title_case": false,
                 "type": "str",
-                "value": "<replace_with_your_key>"
+                "value": ""
               },
               "code": {
                 "advanced": true,
@@ -403,7 +406,7 @@
                 "tool_mode": false,
                 "trace_as_metadata": true,
                 "type": "str",
-                "value": "gemini-1.5-pro"
+                "value": "gemini-2.5-flash-lite-preview-06-17"
               },
               "n": {
                 "_input_type": "IntInput",
@@ -551,7 +554,7 @@
                 "trace_as_input": true,
                 "trace_as_metadata": true,
                 "type": "str",
-                "value": "You are an expert Research Paper Critic Agent with deep expertise in academic writing, peer review, and AI-assisted reasoning. \nYour task is to critically analyze and evaluate research papers with the rigor of a top-tier journal reviewer (e.g., NeurIPS, Nature, or IEEE Transactions). \nYou should identify both strengths and weaknesses, suggest improvements, and provide a clear overall assessment of quality and novelty.\n\nYour critique must include:\n1. **Summary** – A concise explanation of the paper’s goal, methodology, and contributions.\n2. **Novelty & Significance** – How original or impactful the work is within its field.\n3. **Technical Quality** – Soundness of experiments, methods, proofs, or data.\n4. **Clarity & Structure** – How well the paper communicates its ideas.\n5. **Limitations** – Missing analyses, unclear assumptions, weak baselines, or possible flaws.\n6. **Suggestions for Improvement** – Constructive feedback on what can be done to enhance the paper.\n7. **Overall Rating** – Give a score from 1–10 (1 = poor, 10 = groundbreaking).\n8. **Confidence** – Indicate how confident you are in your review (Low, Medium, High).\n\nAdopt a tone that is professional, critical, and fair—similar to that used in academic peer reviews.\n"
+                "value": "You are an expert on document review. Suggest anything that you think the document should add more without asking back to user.\n"
               },
               "temperature": {
                 "_input_type": "SliderInput",
@@ -684,7 +687,7 @@
           "showNode": true,
           "type": "Agent"
         },
-        "id": "Agent-HN7xN",
+        "id": "Agent-NkJqq",
         "measured": {
           "height": 673,
           "width": 320
@@ -698,7 +701,7 @@
       },
       {
         "data": {
-          "id": "ChatInput-VZPGJ",
+          "id": "ChatInput-3B62j",
           "node": {
             "base_classes": [
               "Message"
@@ -709,7 +712,7 @@
             "description": "Get chat inputs from the Playground.",
             "display_name": "Chat Input",
             "documentation": "https://docs.langflow.org/components-io#chat-input",
-            "edited": false,
+            "edited": true,
             "field_order": [
               "input_value",
               "should_store_message",
@@ -730,8 +733,11 @@
                 "cache": true,
                 "display_name": "Chat Message",
                 "group_outputs": false,
+                "hidden": null,
                 "method": "message_response",
                 "name": "message",
+                "options": null,
+                "required_inputs": null,
                 "selected": "Message",
                 "tool_mode": true,
                 "types": [
@@ -759,7 +765,7 @@
                 "show": true,
                 "title_case": false,
                 "type": "code",
-                "value": "from langflow.base.data.utils import IMG_FILE_TYPES, TEXT_FILE_TYPES\nfrom langflow.base.io.chat import ChatComponent\nfrom langflow.inputs.inputs import BoolInput\nfrom langflow.io import (\n    DropdownInput,\n    FileInput,\n    MessageTextInput,\n    MultilineInput,\n    Output,\n)\nfrom langflow.schema.message import Message\nfrom langflow.utils.constants import (\n    MESSAGE_SENDER_AI,\n    MESSAGE_SENDER_NAME_USER,\n    MESSAGE_SENDER_USER,\n)\n\n\nclass ChatInput(ChatComponent):\n    display_name = \"Chat Input\"\n    description = \"Get chat inputs from the Playground.\"\n    documentation: str = \"https://docs.langflow.org/components-io#chat-input\"\n    icon = \"MessagesSquare\"\n    name = \"ChatInput\"\n    minimized = True\n\n    inputs = [\n        MultilineInput(\n            name=\"input_value\",\n            display_name=\"Input Text\",\n            value=\"\",\n            info=\"Message to be passed as input.\",\n            input_types=[],\n        ),\n        BoolInput(\n            name=\"should_store_message\",\n            display_name=\"Store Messages\",\n            info=\"Store the message in the history.\",\n            value=True,\n            advanced=True,\n        ),\n        DropdownInput(\n            name=\"sender\",\n            display_name=\"Sender Type\",\n            options=[MESSAGE_SENDER_AI, MESSAGE_SENDER_USER],\n            value=MESSAGE_SENDER_USER,\n            info=\"Type of sender.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"sender_name\",\n            display_name=\"Sender Name\",\n            info=\"Name of the sender.\",\n            value=MESSAGE_SENDER_NAME_USER,\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"session_id\",\n            display_name=\"Session ID\",\n            info=\"The session ID of the chat. If empty, the current session ID parameter will be used.\",\n            advanced=True,\n        ),\n        FileInput(\n            name=\"files\",\n            display_name=\"Files\",\n            file_types=TEXT_FILE_TYPES + IMG_FILE_TYPES,\n            info=\"Files to be sent with the message.\",\n            advanced=True,\n            is_list=True,\n            temp_file=True,\n        ),\n    ]\n    outputs = [\n        Output(display_name=\"Chat Message\", name=\"message\", method=\"message_response\"),\n    ]\n\n    async def message_response(self) -> Message:\n        # Ensure files is a list and filter out empty/None values\n        files = self.files if self.files else []\n        if files and not isinstance(files, list):\n            files = [files]\n        files = [f for f in files if f is not None and f != \"\"]\n\n        message = await Message.create(\n            text=self.input_value,\n            sender=self.sender,\n            sender_name=self.sender_name,\n            session_id=self.session_id,\n            files=files,\n        )\n        if self.session_id and isinstance(message, Message) and self.should_store_message:\n            stored_message = await self.send_message(\n                message,\n            )\n            self.message.value = stored_message\n            message = stored_message\n\n        self.status = message\n        return message\n"
+                "value": "from langflow.base.data.utils import IMG_FILE_TYPES, TEXT_FILE_TYPES\nfrom langflow.base.io.chat import ChatComponent\nfrom langflow.inputs.inputs import BoolInput\nfrom langflow.io import (\n    DropdownInput,\n    FileInput,\n    MessageTextInput,\n    MultilineInput,\n    Output,\n)\nfrom langflow.schema.message import Message\nfrom langflow.utils.constants import (\n    MESSAGE_SENDER_AI,\n    MESSAGE_SENDER_NAME_USER,\n    MESSAGE_SENDER_USER,\n)\n\n\nclass ChatInput(ChatComponent):\n    display_name = \"Chat Input\"\n    description = \"Get chat inputs from the Playground.\"\n    documentation: str = \"https://docs.langflow.org/components-io#chat-input\"\n    icon = \"MessagesSquare\"\n    name = \"ChatInput\"\n    minimized = True\n\n    inputs = [\n        MultilineInput(\n            name=\"input_value\",\n            display_name=\"Input Text\",\n            value=\"\",\n            info=\"Summary of document from docling_agent.\",\n            input_types=[],\n        ),\n        BoolInput(\n            name=\"should_store_message\",\n            display_name=\"Store Messages\",\n            info=\"Store the message in the history.\",\n            value=True,\n            advanced=True,\n        ),\n        DropdownInput(\n            name=\"sender\",\n            display_name=\"Sender Type\",\n            options=[MESSAGE_SENDER_AI, MESSAGE_SENDER_USER],\n            value=MESSAGE_SENDER_USER,\n            info=\"Type of sender.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"sender_name\",\n            display_name=\"Sender Name\",\n            info=\"Name of the sender.\",\n            value=MESSAGE_SENDER_NAME_USER,\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"session_id\",\n            display_name=\"Session ID\",\n            info=\"The session ID of the chat. If empty, the current session ID parameter will be used.\",\n            advanced=True,\n        ),\n        FileInput(\n            name=\"files\",\n            display_name=\"Files\",\n            file_types=TEXT_FILE_TYPES + IMG_FILE_TYPES,\n            info=\"Files to be sent with the message.\",\n            advanced=True,\n            is_list=True,\n            temp_file=True,\n        ),\n    ]\n    outputs = [\n        Output(display_name=\"Chat Message\", name=\"message\", method=\"message_response\"),\n    ]\n\n    async def message_response(self) -> Message:\n        # Ensure files is a list and filter out empty/None values\n        files = self.files if self.files else []\n        if files and not isinstance(files, list):\n            files = [files]\n        files = [f for f in files if f is not None and f != \"\"]\n\n        message = await Message.create(\n            text=self.input_value,\n            sender=self.sender,\n            sender_name=self.sender_name,\n            session_id=self.session_id,\n            files=files,\n        )\n        if self.session_id and isinstance(message, Message) and self.should_store_message:\n            stored_message = await self.send_message(\n                message,\n            )\n            self.message.value = stored_message\n            message = stored_message\n\n        self.status = message\n        return message\n"
               },
               "files": {
                 "_input_type": "FileInput",
@@ -811,7 +817,7 @@
                 "copy_field": false,
                 "display_name": "Input Text",
                 "dynamic": false,
-                "info": "Message to be passed as input.",
+                "info": "Summary of document from docling_agent.",
                 "input_types": [],
                 "list": false,
                 "list_add_label": "Add More",
@@ -923,7 +929,7 @@
           "showNode": false,
           "type": "ChatInput"
         },
-        "id": "ChatInput-VZPGJ",
+        "id": "ChatInput-3B62j",
         "measured": {
           "height": 47,
           "width": 192
@@ -937,7 +943,9 @@
       },
       {
         "data": {
-          "id": "ChatOutput-J3KwL",
+          "description": "Display a chat message in the Playground.",
+          "display_name": "Chat Output",
+          "id": "ChatOutput-Dteip",
           "node": {
             "base_classes": [
               "Message"
@@ -971,6 +979,8 @@
                 "group_outputs": false,
                 "method": "message_response",
                 "name": "message",
+                "options": null,
+                "required_inputs": null,
                 "selected": "Message",
                 "tool_mode": true,
                 "types": [
@@ -1140,7 +1150,7 @@
           "showNode": false,
           "type": "ChatOutput"
         },
-        "id": "ChatOutput-J3KwL",
+        "id": "ChatOutput-Dteip",
         "measured": {
           "height": 47,
           "width": 192
@@ -1154,14 +1164,14 @@
       }
     ],
     "viewport": {
-      "x": -308.3196566776512,
-      "y": -300.7058373935138,
-      "zoom": 0.9896566565685345
+      "x": -451.4234769687964,
+      "y": -317.5344104058321,
+      "zoom": 1.2615156017830609
     }
   },
-  "description": "Craft Language Connections Here.",
+  "description": "",
   "endpoint_name": null,
-  "id": "e855eac8-2ca0-4439-98b9-55437063c467",
+  "id": "703df206-88d6-4490-9188-f71ae6bd7a72",
   "is_component": false,
   "last_tested_version": "1.6.3",
   "name": "Workshop Flow",
