@@ -62,7 +62,7 @@ Creating Project
 
 ### 5. Setup Master Agent and Docling Agent on watsonx Orchestrate
 
-0. run `cd orchestrate` then `uv sync`
+0. run `cd orchestrate` then `uv sync`. In case you don't have uv do `pip install uv`
 - For windows, run `.\.venv\Scripts\activate.bat`. For macOS, `source .venv/bin/activate`.
 
 ![alt text](assets/step6/image.png)
