@@ -92,16 +92,12 @@ Creating Project
 
 7. Put service name as "docling_mcp". Put the command `uvx mcp-proxy https://docling-server-large.21oo25foed0i.us-east.codeengine.appdomain.cloud/sse`. Leave other fields as it is. Click "Connect" and "Done". Toggle open for all tools you see on the screen, all pages.
 
-![alt text](assets/step6/image7.png)
-
-8. Go to master_agent. Click "Add agent". Click "Import from local instance". Click "docling_agent" then "Add to agent".
-
 ![alt text](assets/step6/image8.png)
 ![alt text](assets/step6/image9.png)
 
-9. Go to Langflow project you imported. Click "Share" and select "MCP Server". Copy the url as shown on the 2nd image and save it on your note. 
+8. Go to Langflow project you imported. Click "Share" and select "MCP Server". Copy the url as shown on the 2nd image and save it on your note. 
 
-10. Go to Toolset of master_agent. Now, we will add critic_agent of Langflow via MCP. Again, you will click on "Add tool", "Add from file or MCP server", and "Import from MCP server". Click "Add MCP server". Put "Server name" as `langflow`. Replace URL you copy from step 10 from (http://localhost:7860) with (Your forwarded address of port 7860). Put "Install command" as `uvx mcp-proxy <Your fixed url>`. Click "Connect" and "Done". Toggle open for all tools you see on the screen, all pages. 
+9. Go to Toolset of master_agent. Now, we will add critic_agent of Langflow via MCP. Again, you will click on "Add tool", "Add from file or MCP server", and "Import from MCP server". Click "Add MCP server". Put "Server name" as `langflow`. Replace URL you copy from step 10 from (http://localhost:7860) with (Your forwarded address of port 7860). Put "Install command" as `uvx mcp-proxy <Your fixed url>`. Click "Connect" and "Done". Toggle open for all tools you see on the screen, all pages. 
 
 ### 6. Test master_agent
 ```
