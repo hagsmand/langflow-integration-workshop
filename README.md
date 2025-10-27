@@ -1,6 +1,10 @@
-## AI Alliance Workshop
+### Exercise 7: Enterprise Agentic AI Orchestration at Scale
 
-**If you are Windows user. Any command please run as admin**
+This lab focuses on integrating WxO Agents with Langflow, and enables participants to explore Docling, an open-source document extraction tool powered by Vision-Language Model (VLM) technology.
+
+*Please make sure to install any required programs and register to required platform on your laptop before joining the event. Note that you will receive the link to the GitHub repository on the day of the event.
+
+**IMPORTANT: If you are Windows user. Any command please run as admin**
 
 ### 1. Setup IBM Cloud free trial version
 1. Please access the following link:
